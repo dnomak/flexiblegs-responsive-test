@@ -1,32 +1,22 @@
-a.xl-style-circle.active {
-  color: #3498db;
+.xl-button.active {
+  color: #1094F6;
+  border-color: #1094F6;
 }
-a.lg-style-circle.active {
-  color: #e74c3c;
+.lg-button.active {
+  color: #F72848;
+  border-color: #F72848;
 }
-a.md-style-circle.active {
-  color: #1abc9c;
+.md-button.active {
+  color: #12D469;
+  border-color: #12D469;
 }
-a.sm-style-circle.active {
-  color: #f39c12;
+.sm-button.active {
+  color: #973CBD;
+  border-color: #973CBD;
 }
-a.xs-style-circle.active {
-  color: #9b59b6;
-}
-a.xl-style-circle:hover {
-  color: #3498db;
-}
-a.lg-style-circle:hover {
-  color: #e74c3c;
-}
-a.md-style-circle:hover {
-  color: #1abc9c;
-}
-a.sm-style-circle:hover {
-  color: #f39c12;
-}
-a.xs-style-circle:hover {
-  color: #9b59b6;
+.xs-button.active {
+  color: #FFCC00;
+  border-color: #FFCC00;
 }
 
 iframe.example {

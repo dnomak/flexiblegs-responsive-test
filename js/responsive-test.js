@@ -1,9 +1,9 @@
-function dnomakResponsiveTest() {
+function responsiveTest() {
 
   // --------------------
   // Url
   // --------------------
-  function dnomakGetUrlVars() {
+  function getUrlVars() {
     var vars = [],
       hash;
     var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
@@ -14,10 +14,10 @@ function dnomakResponsiveTest() {
     }
     return vars;
   }
-  var url = dnomakGetUrlVars()["url"];
-  var col = dnomakGetUrlVars()["col"];
+  var url = getUrlVars()["url"];
+  var col = getUrlVars()["col"];
   if(url == null) {
-    url = "http://dnomak.com"
+    url = "test.html"
   }
   else {
     $('.url').val(url)
@@ -32,23 +32,23 @@ function dnomakResponsiveTest() {
   // --------------------
   // Home
   // --------------------
-  $(".home").click(function() {
-    window.location = "?url=http://dnomak.com&col=" + col + "";
-  });
+  // $(".home").click(function() {
+  //   window.location = "?url=test.html&col=" + col + "";
+  // });
 
   // --------------------
   // Field
   // --------------------
   $(".url").keyup(function(event) {
     if (event.keyCode == 13) {
-      $(".refresh").click();
+      $(".enter").click();
     }
   });
 
   // --------------------
-  // Refresh
+  // Enter
   // --------------------
-  $(".refresh").click(function() {
+  $(".enter").click(function() {
     url = $('.url').val()
     window.location = "?url=" + url + "&col=" + col + "";
   });
@@ -56,14 +56,14 @@ function dnomakResponsiveTest() {
   iframe = "<div class='row text-center'><iframe src='" + url + "' class='example' frameborder='0'></iframe></div>";
   $('.macbook').html(iframe);
 
-  var dnomakXlButtonClick = function() {
+  var xlButtonClick = function() {
     col = "xl"
 
-    $('.xl-style-circle').addClass('active');
-    $('.lg-style-circle').removeClass('active');
-    $('.md-style-circle').removeClass('active');
-    $('.sm-style-circle').removeClass('active');
-    $('.xs-style-circle').removeClass('active');
+    $('.xl-button').addClass('active');
+    $('.lg-button').removeClass('active');
+    $('.md-button').removeClass('active');
+    $('.sm-button').removeClass('active');
+    $('.xs-button').removeClass('active');
 
     $('.macbook').css("display", "block");
     $('.macbook').html(iframe);
@@ -74,14 +74,14 @@ function dnomakResponsiveTest() {
     $('.iphone-portrait').css("display", "none");
   };
 
-  var dnomakLgButtonClick = function() {
+  var lgButtonClick = function() {
     col = "lg"
 
-    $('.xl-style-circle').removeClass('active');
-    $('.lg-style-circle').addClass('active');
-    $('.md-style-circle').removeClass('active');
-    $('.sm-style-circle').removeClass('active');
-    $('.xs-style-circle').removeClass('active');
+    $('.xl-button').removeClass('active');
+    $('.lg-button').addClass('active');
+    $('.md-button').removeClass('active');
+    $('.sm-button').removeClass('active');
+    $('.xs-button').removeClass('active');
 
     $('.ipad-landscape').css("display", "block");
     $('.ipad-landscape').html(iframe);
@@ -92,14 +92,14 @@ function dnomakResponsiveTest() {
     $('.iphone-portrait').css("display", "none");
   };
 
-  var dnomakMdButtonClick = function() {
+  var mdButtonClick = function() {
     col = "md"
 
-    $('.xl-style-circle').removeClass('active');
-    $('.lg-style-circle').removeClass('active');
-    $('.md-style-circle').addClass('active');
-    $('.sm-style-circle').removeClass('active');
-    $('.xs-style-circle').removeClass('active');
+    $('.xl-button').removeClass('active');
+    $('.lg-button').removeClass('active');
+    $('.md-button').addClass('active');
+    $('.sm-button').removeClass('active');
+    $('.xs-button').removeClass('active');
 
     $('.ipad-portrait').css("display", "block");
     $('.ipad-portrait').html(iframe);
@@ -110,14 +110,14 @@ function dnomakResponsiveTest() {
     $('.iphone-portrait').css("display", "none");
   };
 
-  var dnomakSmButtonClick = function() {
+  var smButtonClick = function() {
     col = "sm"
 
-    $('.xl-style-circle').removeClass('active');
-    $('.lg-style-circle').removeClass('active');
-    $('.md-style-circle').removeClass('active');
-    $('.sm-style-circle').addClass('active');
-    $('.xs-style-circle').removeClass('active');
+    $('.xl-button').removeClass('active');
+    $('.lg-button').removeClass('active');
+    $('.md-button').removeClass('active');
+    $('.sm-button').addClass('active');
+    $('.xs-button').removeClass('active');
 
     $('.iphone-landscape').css("display", "block");
     $('.iphone-landscape').html(iframe);
@@ -128,14 +128,14 @@ function dnomakResponsiveTest() {
     $('.iphone-portrait').css("display", "none");
   };
 
-  var dnomakXsButtonClick = function() {
+  var xsButtonClick = function() {
     col = "xs"
 
-    $('.xl-style-circle').removeClass('active');
-    $('.lg-style-circle').removeClass('active');
-    $('.md-style-circle').removeClass('active');
-    $('.sm-style-circle').removeClass('active');
-    $('.xs-style-circle').addClass('active');
+    $('.xl-button').removeClass('active');
+    $('.lg-button').removeClass('active');
+    $('.md-button').removeClass('active');
+    $('.sm-button').removeClass('active');
+    $('.xs-button').addClass('active');
 
     $('.iphone-portrait').css("display", "block");
     $('.iphone-portrait').html(iframe);
@@ -151,43 +151,43 @@ function dnomakResponsiveTest() {
   // --------------------
 
   if (col == "xl") {
-    dnomakXlButtonClick()
+    xlButtonClick()
   }
   if (col == "lg") {
-    dnomakLgButtonClick()
+    lgButtonClick()
   }
   if (col == "md") {
-    dnomakMdButtonClick()
+    mdButtonClick()
   }
   if (col == "sm") {
-    dnomakSmButtonClick()
+    smButtonClick()
   }
   if (col == "xs") {
-    dnomakXsButtonClick()
+    xsButtonClick()
   }
 
   // --------------------
   // Click
   // --------------------
 
-  $(".xl-style-circle").click(function() {
-    dnomakXlButtonClick()
+  $(".xl-button").click(function() {
+    xlButtonClick()
   });
 
-  $(".lg-style-circle").click(function() {
-    dnomakLgButtonClick()
+  $(".lg-button").click(function() {
+    lgButtonClick()
   });
 
-  $(".md-style-circle").click(function() {
-    dnomakMdButtonClick()
+  $(".md-button").click(function() {
+    mdButtonClick()
   });
 
-  $(".sm-style-circle").click(function() {
-    dnomakSmButtonClick()
+  $(".sm-button").click(function() {
+    smButtonClick()
   });
 
-  $(".xs-style-circle").click(function() {
-    dnomakXsButtonClick()
+  $(".xs-button").click(function() {
+    xsButtonClick()
   });
 
 }
