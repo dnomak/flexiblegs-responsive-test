@@ -1,2 +1,0 @@
-# responsive-test
-Responsive Test
